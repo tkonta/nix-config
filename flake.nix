@@ -50,7 +50,7 @@
       };
     };
 
-    darwinConfigurations.tyamahori-darwin = nix-darwin.lib.darwinSystem {
+    darwinConfigurations.tkonta-darwin = nix-darwin.lib.darwinSystem {
       system = system;
       modules = [ ./nix-darwin/default.nix ];
    };

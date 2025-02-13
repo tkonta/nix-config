@@ -19,17 +19,17 @@ in {
 
     # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
     stateVersion = "24.05";
-  };
-  
-  packages = with pkgs; [
+
+    packages = with pkgs; [
       git
       curl
-      cmake
-      mas
       direnv
       wget
+      tree
     ];
   };
 
   programs.home-manager.enable = true;
+  programs.direnv.enable = true;
+  programs.direnv.nix-direnv.enable = true;
 }
