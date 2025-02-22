@@ -18,3 +18,8 @@ export DARWIN_HOST=$(hostname -s)
 ```sh
 darwin-rebuild switch --flake . --impure
 ```
+
+clean up
+```sh
+nix-collect-garbage -d
+```
