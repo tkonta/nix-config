@@ -8,6 +8,11 @@ nix-darwinのインストール
 nix profile install github:LnL7/nix-darwin
 ```
 
+homebrewのインストール
+```sh
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+
 以下をzshrcへ反映
 ```sh
 export DARWIN_USER=$(whoami)

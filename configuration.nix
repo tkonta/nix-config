@@ -3,7 +3,6 @@
   nix.enable = false;
   # システムにインストールするパッケージ
   environment.systemPackages = with pkgs; [
-    vim
     git
   ];
 
@@ -16,6 +15,7 @@
 
   # 非自由パッケージを許可
   nixpkgs.config.allowUnfree = true;
+
 
   # Finder設定
   system.defaults.finder = {
@@ -80,8 +80,54 @@
     # アプリケーション起動時のアニメーションを無効化: falseにすると、起動アニメーションが表示されなくなります。
     # システムの応答が速く感じられ、特に低スペックのマシンで有用です。
     launchanim = false;
+
+    # App Exposéを有効にする（マルチタッチジェスチャーで利用可能に）
+    # showAppExposeGestureEnabled = true;
+
+    # アプリケーションごとにウィンドウをグループ化
+    expose-group-apps = true;
   };
 
+  # キーボードのリピート速度を速くする設定
+  system.defaults.NSGlobalDomain = {
+    # キーリピートの速度（数値が小さいほど速い、デフォルトは6）
+
+    KeyRepeat = 1;
+
+    # キーリピート開始までの遅延（数値が小さいほど速い、デフォルトは25）
+    InitialKeyRepeat = 1;
+
+    # 継続的なキー押下を有効化（必要に応じて）
+    ApplePressAndHoldEnabled = false;
+  };
+
+  # homebrewの設定
+  homebrew = {
+      enable = true;
+        onActivation = {
+        autoUpdate = true;      # `brew update`を実行
+        cleanup = "zap";        # 管理されていないFormulaeを削除
+        upgrade = true;         # `brew upgrade`を実行
+      };
+      brews = [
+	"mas"
+      ];
+      casks = [
+        "emacs"
+	"alacritty"
+	"google-chrome"
+	"google-japanese-ime"
+	"discord"
+	"slack"
+      ];
+
+      # AppStore
+      masApps = {
+        LINE = 539883307;
+        Xcode = 497799835;
+        Monosnap = 540348655;
+      };
+  };
 
   # 下位互換性のため（変更時はchangelogを確認）
   system.stateVersion = 6;

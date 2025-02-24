@@ -5,6 +5,8 @@
     ripgrep
     fd
     jq
+    tmux
+    tree
   ];
 
   # ユーザー情報
