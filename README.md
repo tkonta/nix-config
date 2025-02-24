@@ -13,7 +13,7 @@ homebrewのインストール
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-以下をzshrcへ反映
+以下を~/.zshrcへ反映
 ```sh
 export DARWIN_USER=$(whoami)
 export DARWIN_HOST=$(hostname -s)
@@ -24,7 +24,13 @@ export DARWIN_HOST=$(hostname -s)
 darwin-rebuild switch --flake . --impure
 ```
 
+パッケージのアップグレード
+```sh
+nix flake update
+darwin-rebuild switch --flake . --impure
+```
+
 clean up
 ```sh
-nix-collect-garbage -d
+nix store gc
 ```
