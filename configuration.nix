@@ -119,6 +119,11 @@
 	"google-japanese-ime"
 	"discord"
 	"slack"
+	"qfinder-pro"
+	"sequel-ace"
+	"keka"
+	"brave-browser"
+	"mi@beta"
       ];
 
       # AppStore
@@ -126,6 +131,8 @@
         LINE = 539883307;
         Xcode = 497799835;
         Monosnap = 540348655;
+	G2FA = 6444865161;
+	"まるごと英和検索for英辞郎" = 919856506;
       };
   };
 
