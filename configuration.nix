@@ -124,6 +124,9 @@
 	"keka"
 	"brave-browser"
 	"mi@beta"
+	"raycast"
+	"clipy"
+	"google-drive"
       ];
 
       # AppStore
