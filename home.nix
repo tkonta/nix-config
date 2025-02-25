@@ -16,6 +16,12 @@
   # このバグが修正されたら、単に "/Users/${username}" と設定できるようになる可能性があります。
   home.homeDirectory = lib.mkForce "/Users/${username}";
 
+  # 環境変数
+  home.sessionVariables = {
+    # zshrcの読み込み先を.config/zrsに変更
+    ZDOTDIR = "~/.config/zsh";
+  };
+
   # home-managerのバージョン（変更時は注意）
   home.stateVersion = "23.05";
 
