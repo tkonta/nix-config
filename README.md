@@ -19,11 +19,6 @@ export DARWIN_USER=$(whoami)
 export DARWIN_HOST=$(hostname -s)
 ```
 
-nix-darwinの設定ファイルの読み込み先のシンボリックファイルを作成
-```sh
-    ln -s configuration.private.nix configuration.nix 
-```
-
 設定反映
 ```sh
 darwin-rebuild switch --flake . --impure

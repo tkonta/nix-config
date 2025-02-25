@@ -114,19 +114,19 @@
       ];
       casks = [
         "emacs"
-	"alacritty"
-	"google-chrome"
-	"google-japanese-ime"
-	"discord"
-	"slack"
-	"qfinder-pro"
-	"sequel-ace"
-	"keka"
-	"brave-browser"
-	"mi@beta"
-	"raycast"
-	"clipy"
-	"google-drive"
+        "alacritty"
+        "google-chrome"
+        "google-japanese-ime"
+        "google-drive"
+        "clipy"
+        "slack"
+        "sequel-ace"
+        "raycast"
+        "discord"
+        "qfinder-pro"
+        "keka"
+        "brave-browser"
+        "mi@beta"
       ];
 
       # AppStore
@@ -134,8 +134,8 @@
         LINE = 539883307;
         Xcode = 497799835;
         Monosnap = 540348655;
-	G2FA = 6444865161;
-	"まるごと英和検索for英辞郎" = 919856506;
+        G2FA = 6444865161;
+        "まるごと英和検索for英辞郎" = 919856506;
       };
   };
 
