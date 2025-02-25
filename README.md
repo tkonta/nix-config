@@ -40,3 +40,13 @@ uninstall
 darwin-uninstaller
 /nix/nix-installer uninstall
 ```
+
+
+## トラブルシューティング
+
+一部のソフトウェアがAppleの検証によりオープンできない場合は手動でインストールを行う
+
+```sh
+brew uninstall alacritty
+brew install --cask alacritty --no-quarantine
+```
