@@ -19,7 +19,8 @@
       mkDarwinSystem = { hostname, username }: nix-darwin.lib.darwinSystem {
         system = "aarch64-darwin";
         modules = [
-          ./configuration.nix
+          #./configuration.office.nix
+          ./configuration.home.nix
           home-manager.darwinModules.home-manager
           {
             networking.hostName = hostname;

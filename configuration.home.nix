@@ -127,6 +127,7 @@
         "keka"
         "brave-browser"
         "mi@beta"
+        "gather"
       ];
 
       # AppStore
