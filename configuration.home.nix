@@ -110,7 +110,7 @@
         upgrade = true;         # `brew upgrade`を実行
       };
       brews = [
-	"mas"
+        "mas"
       ];
       casks = [
         "emacs"
@@ -127,7 +127,6 @@
         "keka"
         "brave-browser"
         "mi@beta"
-        "gather"
       ];
 
       # AppStore
@@ -137,6 +136,7 @@
         Monosnap = 540348655;
         G2FA = 6444865161;
         "まるごと英和検索for英辞郎" = 919856506;
+        "MARKETSPEED" = 946680495;
       };
   };
 
