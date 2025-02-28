@@ -110,7 +110,9 @@
         upgrade = true;         # `brew upgrade`を実行
       };
       brews = [
-	"mas"
+        "mas"
+        "awscli"
+        "aws-vault"
       ];
       casks = [
         "emacs"
@@ -125,6 +127,7 @@
         "keka"
         "mi@beta"
         "gather"
+        "orbstack"
       ];
 
       # AppStore
