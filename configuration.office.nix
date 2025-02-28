@@ -112,7 +112,6 @@
       brews = [
         "mas"
         "awscli"
-        "aws-vault"
       ];
       casks = [
         "emacs"
@@ -128,6 +127,8 @@
         "mi@beta"
         "gather"
         "orbstack"
+        "mysqlworkbench"
+        "aws-vault"
       ];
 
       # AppStore
