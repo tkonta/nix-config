@@ -92,10 +92,10 @@
   system.defaults.NSGlobalDomain = {
     # キーリピートの速度（数値が小さいほど速い、デフォルトは6）
 
-    KeyRepeat = 1;
+    KeyRepeat = 3;
 
     # キーリピート開始までの遅延（数値が小さいほど速い、デフォルトは25）
-    InitialKeyRepeat = 1;
+    InitialKeyRepeat = 5;
 
     # 継続的なキー押下を有効化（必要に応じて）
     ApplePressAndHoldEnabled = false;
@@ -112,6 +112,8 @@
       brews = [
         "mas"
         "awscli"
+        "mysql-client"
+        "apidoc"
       ];
       casks = [
         "emacs"
