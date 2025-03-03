@@ -92,10 +92,10 @@
   system.defaults.NSGlobalDomain = {
     # キーリピートの速度（数値が小さいほど速い、デフォルトは6）
 
-    KeyRepeat = 1;
+    KeyRepeat = 2;
 
     # キーリピート開始までの遅延（数値が小さいほど速い、デフォルトは25）
-    InitialKeyRepeat = 1;
+    InitialKeyRepeat = 10;
 
     # 継続的なキー押下を有効化（必要に応じて）
     ApplePressAndHoldEnabled = false;
@@ -111,6 +111,8 @@
       };
       brews = [
         "mas"
+        "cpanminus"
+        "openjdk"
       ];
       casks = [
         "emacs"
@@ -127,6 +129,8 @@
         "keka"
         "brave-browser"
         "mi@beta"
+        "elgato-camera-hub"
+        "obs"
       ];
 
       # AppStore
