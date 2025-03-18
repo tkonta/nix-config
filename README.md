@@ -50,3 +50,9 @@ darwin-uninstaller
 brew uninstall alacritty
 brew install --cask alacritty --no-quarantine
 ```
+
+nix-darwinでトラブルがあったときは、flake updateで最新版を試してみる
+
+```sh
+nix flake update
+```

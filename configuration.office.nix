@@ -113,7 +113,6 @@
         "mas"
         "awscli"
         "mysql-client"
-        "apidoc"
       ];
       casks = [
         "emacs"
