@@ -106,7 +106,7 @@
       enable = true;
         onActivation = {
         autoUpdate = true;      # `brew update`を実行
-        cleanup = "zap";        # 管理されていないFormulaeを削除
+        #cleanup = "zap";        # 管理されていないFormulaeを削除
         upgrade = true;         # `brew upgrade`を実行
       };
       brews = [
@@ -115,8 +115,6 @@
         "openjdk"
       ];
       casks = [
-        "emacs"
-        "alacritty"
         "google-chrome"
         "google-japanese-ime"
         "google-drive"
