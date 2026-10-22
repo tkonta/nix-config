@@ -129,6 +129,7 @@
         "mi@beta"
         "elgato-camera-hub"
         "obs"
+        "hammerspoon"
       ];
 
       # AppStore
