@@ -113,6 +113,7 @@
         "mas"
         "cpanminus"
         "openjdk"
+        "node"
       ];
       casks = [
         "google-chrome"
