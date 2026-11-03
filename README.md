@@ -5,7 +5,7 @@ curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix 
 
 nix-darwinのインストール
 ```sh
-nix profile install github:LnL7/nix-darwin
+nix profile add github:LnL7/nix-darwin
 ```
 
 homebrewのインストール
