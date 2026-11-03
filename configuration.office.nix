@@ -122,11 +122,11 @@
         "google-japanese-ime"
         "google-drive"
         "raycast"
+        "coteditor"
       ];
 
       # AppStore
       masApps = {
-        CotEditor = 1024640650;
         Monosnap = 540348655;
         G2FA = 6444865161;
       };

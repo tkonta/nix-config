@@ -125,6 +125,7 @@
         "slack"
         "sequel-ace"
         "raycast"
+        "coteditor"
         "discord"
         "qfinder-pro"
         "keka"
@@ -139,7 +140,6 @@
 
       # AppStore
       masApps = {
-        CotEditor = 1024640650;
         LINE = 539883307;
         Monosnap = 540348655;
         G2FA = 6444865161;
