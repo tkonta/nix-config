@@ -30,15 +30,17 @@
   }:
     let
       darwinUser = builtins.getEnv "DARWIN_USER";
-      darwinHost = builtins.getEnv "DARWIN_HOST";
+      hostConfigurations = {
+        tkontaMacBookAir = ./configuration.home.nix;
+        FONP00191 = ./configuration.office.nix;
+      };
 
-      mkDarwinSystem = { hostname, username }:
+      mkDarwinSystem = { hostname, username, configurationFile }:
         nix-darwin.lib.darwinSystem {
           system = "aarch64-darwin";
 
           modules = [
-            # ./configuration.office.nix
-            ./configuration.home.nix
+            configurationFile
             home-manager.darwinModules.home-manager
 
             {
@@ -68,9 +70,11 @@
         };
     in
     {
-      darwinConfigurations.${darwinHost} = mkDarwinSystem {
-        hostname = darwinHost;
-        username = darwinUser;
-      };
+      darwinConfigurations = builtins.mapAttrs (hostname: configurationFile:
+        mkDarwinSystem {
+          inherit hostname configurationFile;
+          username = darwinUser;
+        }
+      ) hostConfigurations;
     };
 }
