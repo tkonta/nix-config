@@ -82,7 +82,7 @@
     launchanim = false;
 
     # App Exposéを有効にする（マルチタッチジェスチャーで利用可能に）
-    # showAppExposeGestureEnabled = true;
+    showAppExposeGestureEnabled = true;
 
     # アプリケーションごとにウィンドウをグループ化
     expose-group-apps = true;
