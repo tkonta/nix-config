@@ -111,6 +111,8 @@
       };
       brews = [
         "mas"
+        # Xcode本体は xcodes install <version> で対応版を指定して導入する。
+        "xcodes"
         "cpanminus"
         "openjdk"
         "node"
@@ -138,7 +140,6 @@
       # AppStore
       masApps = {
         LINE = 539883307;
-        Xcode = 497799835;
         Monosnap = 540348655;
         G2FA = 6444865161;
         "まるごと英和検索for英辞郎" = 919856506;
