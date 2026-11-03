@@ -27,6 +27,22 @@ homebrewのインストール
 未登録のホスト名では設定が見つからずエラーになります。
 
 設定反映
+
+新方式への移行時に `/run/current-system/sw/bin/darwin-rebuild` がまだ存在しないPCでは、
+新方式の `darwin-rebuild` がユーザープロファイルにインストールされていれば、初回だけ次を実行します。
+
+```sh
+sudo DARWIN_USER="$(whoami)" "$HOME/.nix-profile/bin/darwin-rebuild" switch --flake . --impure
+```
+
+反映後、次のコマンドでシステム側に配置されたことを確認してください。
+
+```sh
+ls -l /run/current-system/sw/bin/darwin-rebuild
+```
+
+この初回手順は各PCで一度だけです。配置を確認した後は、自宅・会社とも以下の共通コマンドを使います。
+
 ```sh
 sudo DARWIN_USER="$(whoami)" /run/current-system/sw/bin/darwin-rebuild switch --flake . --impure
 ```
