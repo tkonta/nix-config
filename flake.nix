@@ -45,6 +45,7 @@
 
             {
               networking.hostName = hostname;
+              system.primaryUser = username;
               users.users.${username}.home = "/Users/${username}";
 
               home-manager.useGlobalPkgs = true;

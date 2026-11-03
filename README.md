@@ -13,12 +13,7 @@ homebrewのインストール
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-環境変数の設定
-```sh
-export DARWIN_USER="$(whoami)"
-```
-
-ユーザー名は実行時に取得するため、設定ファイルに記載する必要はありません。
+ユーザー名は以下の反映コマンドで `DARWIN_USER` に渡すため、設定ファイルに記載する必要はありません。
 `DARWIN_HOST` の設定は不要です。
 
 `darwin-rebuild` が現在のホスト名から、以下の設定を自動で選択します。
@@ -33,16 +28,23 @@ export DARWIN_USER="$(whoami)"
 
 設定反映
 ```sh
-darwin-rebuild switch --flake . --impure
+sudo DARWIN_USER="$(whoami)" /run/current-system/sw/bin/darwin-rebuild switch --flake . --impure
 ```
 
 ユーザー名を環境変数から取得するため、`--impure` が必要です。
+普段のユーザーのターミナルから実行してください。`$(whoami)` は sudo の実行前に評価されます。
+システムへの反映には root 権限が必要ですが、Homebrew や Home Manager の適用対象はこのユーザーです。
+移行後の nix-darwin を確実に使うため、コマンドは `/run/current-system/sw/bin/darwin-rebuild` を指定しています。
 
 パッケージのアップグレード
 ```sh
 nix flake update
-darwin-rebuild switch --flake . --impure
+sudo DARWIN_USER="$(whoami)" /run/current-system/sw/bin/darwin-rebuild switch --flake . --impure
 ```
+
+別のPCへ同じ構成を反映する場合は、検証済みの `flake.nix` と `flake.lock` を取り込み、設定反映コマンドだけを実行します。
+そのPCで改めて `nix flake update` を実行する必要はありません。
+`result-darwin` はローカルのビルド結果へのリンクなので、コミットには含めません。
 
 clear cache
 ```sh
