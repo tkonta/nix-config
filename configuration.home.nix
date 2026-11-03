@@ -131,6 +131,8 @@
         "elgato-camera-hub"
         "obs"
         "hammerspoon"
+        "chatgpt"
+        "codex"
       ];
 
       # AppStore
