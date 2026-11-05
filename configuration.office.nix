@@ -134,6 +134,7 @@
         "google-drive"
         "raycast"
         "coteditor"
+        "orbstack"
       ];
 
       # AppStore
