@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 {
   nix.enable = false;
   # システムにインストールするパッケージ
@@ -14,10 +14,6 @@
   # zshの設定
   programs.zsh.enable = true;
   programs.zsh.interactiveShellInit = ''
-    if [[ -s "${config.homebrew.prefix}/opt/sdkman-cli/libexec/bin/sdkman-init.sh" ]]; then
-      export SDKMAN_DIR="${config.homebrew.prefix}/opt/sdkman-cli/libexec"
-      source "$SDKMAN_DIR/bin/sdkman-init.sh"
-    fi
     eval "$("${pkgs.mise}/bin/mise" activate zsh)"
   '';
 
@@ -117,15 +113,10 @@
         #cleanup = "zap";        # 管理されていないFormulaeを削除
         upgrade = false;         # `brew upgrade`を実行
       };
-      taps = [ "sdkman/tap" ];
       brews = [
         "mas"
         # Xcode本体は xcodes install <version> で対応版を指定して導入する。
         "xcodes"
-        {
-          name = "sdkman/tap/sdkman-cli";
-          trusted = true;
-        }
 #        "openjdk"
 #        "node"
       ];
