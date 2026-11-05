@@ -4,6 +4,7 @@
   # システムにインストールするパッケージ
   environment.systemPackages = with pkgs; [
     git
+    mise
   ];
 
   # Nixデーモンの自動アップグレードを有効化
@@ -17,6 +18,7 @@
       export SDKMAN_DIR="${config.homebrew.prefix}/opt/sdkman-cli/libexec"
       source "$SDKMAN_DIR/bin/sdkman-init.sh"
     fi
+    eval "$("${pkgs.mise}/bin/mise" activate zsh)"
   '';
 
   # 非自由パッケージを許可
