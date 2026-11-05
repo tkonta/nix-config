@@ -7,9 +7,6 @@
     mise
   ];
 
-  # Homebrew の libpq は keg-only のため、psql の場所を PATH に追加する。
-  environment.systemPath = [ "/opt/homebrew/opt/libpq/bin" ];
-
   # Nixデーモンの自動アップグレードを有効化
   # services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
@@ -17,6 +14,8 @@
   # zshの設定
   programs.zsh.enable = true;
   programs.zsh.interactiveShellInit = ''
+    # Homebrew の libpq は keg-only のため、対話シェルの PATH に追加する。
+    export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
     eval "$("${pkgs.mise}/bin/mise" activate zsh)"
   '';
 
