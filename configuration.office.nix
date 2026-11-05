@@ -7,6 +7,9 @@
     mise
   ];
 
+  # Homebrew の libpq は keg-only のため、psql の場所を PATH に追加する。
+  environment.systemPath = [ "/opt/homebrew/opt/libpq/bin" ];
+
   # Nixデーモンの自動アップグレードを有効化
   # services.nix-daemon.enable = true;
   nix.package = pkgs.nix;
@@ -114,6 +117,7 @@
         upgrade = false;         # `brew upgrade`を実行
       };
       brews = [
+        "libpq"
         "mas"
         # Xcode本体は xcodes install <version> で対応版を指定して導入する。
         "xcodes"
